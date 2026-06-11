@@ -1,0 +1,8 @@
+
+CREATE TABLE IF NOT EXISTS visits (
+    id SERIAL PRIMARY KEY,
+    count INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMP DEFAULT NOW()
+);
+
+INSERT INTO visits (count) VALUES (0);

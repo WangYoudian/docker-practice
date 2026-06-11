@@ -1,0 +1,9 @@
+
+{
+  "name": "layer-caching-demo",
+  "version": "1.0.0",
+  "description": "Demo Docker layer caching",
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}

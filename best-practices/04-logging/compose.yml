@@ -1,0 +1,12 @@
+
+services:
+  app:
+    image: alpine
+    command: >
+      sh -c "echo 'stdout log line' && echo 'stderr log line' >&2 && sleep 3600"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+        tag: "{{.Name}}/{{.ID}}"

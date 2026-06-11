@@ -1,0 +1,11 @@
+
+# 开发环境 overribe — docker compose up 时会自动加载
+services:
+  app:
+    environment:
+      APP_ENV: development
+    volumes:
+      - ./app:/app
+    ports:
+      - "8104:8000"
+      - "5678:5678"

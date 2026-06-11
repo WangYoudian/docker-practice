@@ -1,0 +1,18 @@
+
+services:
+  app:
+    environment:
+      APP_ENV: production
+    restart: always
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.5"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000')"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s

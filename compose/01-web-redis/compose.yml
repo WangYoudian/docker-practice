@@ -1,0 +1,16 @@
+
+services:
+  app:
+    build: ./app
+    ports:
+      - "8101:8000"
+    environment:
+      - REDIS_HOST=redis
+
+  redis:
+    image: redis:7-alpine
+    volumes:
+      - redis-data:/data
+
+volumes:
+  redis-data:
